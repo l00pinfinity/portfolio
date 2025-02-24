@@ -1,0 +1,86 @@
+<header>
+  <p class="header-text glitch" [attr.data-text]="headerText">{{ headerText }}</p>
+  <div class="theme-toggle">
+    <button class="theme-button" (click)="switchTheme('black-green')">Black & Green</button>
+    <button class="theme-button" (click)="switchTheme('amber-glow')">Amber Glow</button>
+    <button class="theme-button" (click)="switchTheme('white-blue')">White & Blue</button>
+  </div>
+</header>
+
+<div class="hacker-container" *ngIf="!isLoading; else loadingTemplate">
+  <p class="terminal-text">> Initializing system breach...</p>
+  <p class="terminal-text">> Access granted. Welcome to the grid.</p>
+  <br>
+  <p class="typing-text glitch">Hello, I'm <span class="glitch" data-text="COLLINS BOIT">COLLINS BOIT</span></p>
+  <p class="terminal-text"> A passionate and results-driven Software Engineer with over three years of experience in
+    dynamic development environments, specializing in web and Android development, API integration, and system
+    optimization. I have a proven track record in IT support and a strong foundation in cybersecurity, enhanced by
+    completing the CyberShujaa Security Analyst program at United States International University - Africa.
+
+    My expertise lies in building innovative, efficient, and secure solutions that enhance user experience and
+    operational efficiency. With a growing passion for cybersecurity, I am eager to leverage my combined skills in
+    software development and security to create cutting-edge, resilient technologies. I am actively seeking
+    opportunities in mid-level software development or entry-level cybersecurity roles where I can contribute, grow, and
+    make an impact.</p>
+
+  <div class="skillset-display">
+    <p class="terminal-text">> Accessing skills...</p>
+    <br>
+    <p class="typing-text glitch" [attr.data-text]="currentTitle">{{ currentTitle }}</p>
+  </div>
+
+  <div class="skillset-display">
+    <p class="terminal-text">> Accessing projects...</p>
+    <br>
+    <p class="terminal-text"> <b><a href="https://github.com/l00pinfinity/devvscape-code-humor"
+          target="_blank">Developer Mobile App (Devvscape)</a></b> Developed a mobile application featuring coding
+      humor, developer trivia, and tech news,
+      tailored for the software development community.</p>
+    <p class="terminal-text"> <b><a
+          href="https://l00pinfinity.medium.com/building-an-ethical-hacking-playground-at-home-98439af54a78"
+          target="_blank">Ethical Hacking Playground Setup</a></b> Built a home-based environment for ethical hacking
+      practice, utilizing various tools and virtual
+      machines for hands-on learning.</p>
+    <p class="terminal-text"> <b><a href="https://github.com/l00pinfinity/audio-shield" target="_blank">Audio Processing
+          and Sentiment Analysis Platform</a></b> Built a platform for audio uploads with automatic transcription,
+      sentiment analysis, and
+      keyphrase extraction</p>
+    <p class="terminal-text"> <b>SIEM Implementation with ElasticSearch, Kibana, and Auditbeat</b> Deployed a Security
+      Information and Event Management (SIEM) system on Kali Linux to
+      monitor and analyze system logs</p>
+  </div>
+
+  <div class="skillset-display">
+    <p class="terminal-text">> Accessing blogs...</p>
+    <br>
+    <p class="terminal-text"> <a
+        href="https://l00pinfinity.medium.com/getting-started-with-api-fundamentals-767d50bf8d63"
+        target="_blank">Getting Started with API Fundamentals</a></p>
+    <p class="terminal-text"> <a
+        href="https://medium.com/fintech-and-tech-newsletter/embracing-kiswahili-exploring-unique-terminology-in-kenyan-api-sandbox-development-58a6ef41dd1f"
+        target="_blank">Embracing Kiswahili: Exploring Unique Terminology in Kenyan API
+        Sandbox Development</a></p>
+    <p class="terminal-text"> <a
+        href="https://l00pinfinity.medium.com/overthewires-bandit-a-hands-on-guide-to-linux-commands-and-security-fundamentals-5f4903cc3eb9"
+        target="_blank">OverTheWire’s Bandit Walkthrough</a></p>
+  </div>
+
+  <div class="social-section">
+    <p class="terminal-text">> Connecting to network...</p>
+    <br>
+    <div class="social-icons">
+      <a href="https://x.com/l00pinfinity" target="_blank" class="icon glitch" data-text="X">X</a>
+      <a href="https://linkedin.com/in/l00pinfinity" target="_blank" class="icon glitch" data-text="LN">LN</a>
+      <a href="https://github.com/l00pinfinity" target="_blank" class="icon glitch" data-text="GH">GH</a>
+      <a href="https://l00pinfinity.medium.com/" target="_blank" class="icon glitch" data-text="ME">ME</a>
+    </div>
+    <button class="cv-button glitch" data-text="Download CV" (click)="downloadCV()">Download CV</button>
+  </div>
+</div>
+
+<ng-template #loadingTemplate>
+  <div class="loading-screen">
+    <div class="spinner"></div>
+    <p class="loading-text" *ngFor="let message of loadingMessages.slice(0, currentMessageIndex + 1)">{{ message }}</p>
+  </div>
+</ng-template>
